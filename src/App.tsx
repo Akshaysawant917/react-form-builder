@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import CreateForm from './pages/CreateForm';
 import PreviewForm from './pages/PreviewForm';
 import MyForms from './pages/MyForms';
-import Test from './pages/Test';
+import AgeCalculationTutorial from './pages/AgeCalculationTutorial';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Route path="/create" element={<CreateForm />} />
           <Route path="/preview" element={<PreviewForm />} />
           <Route path="/myforms" element={<MyForms />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/tutorial" element={<AgeCalculationTutorial />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />

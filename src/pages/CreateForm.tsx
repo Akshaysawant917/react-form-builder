@@ -35,7 +35,7 @@ import {
     CardContent,
     CardHeader,
     Chip,
-
+    Link,
     Accordion,
     AccordionSummary,
     AccordionDetails,
@@ -44,6 +44,7 @@ import Grid from '@mui/material/Grid';
 
 
 import DeleteIcon from '@mui/icons-material/Delete';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import EditIcon from '@mui/icons-material/Edit';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
@@ -284,6 +285,27 @@ const CreateForm = () => {
                         }}
                     >
                         Create dynamic forms with validation rules, derived fields, and custom configurations
+                    </Typography>
+                </Box>
+                <Box
+                    sx={{
+                        mb: 3,
+                        p: 2,
+                        border: '1px solid',
+                        borderColor: 'primary.light',
+                        borderRadius: 2,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        backgroundColor: 'white',
+                    }}
+                >
+                    <InfoOutlinedIcon color="primary" />
+                    <Typography variant="body1">
+                        Need help creating an Age Calculator form?{' '}
+                        <Link href="/tutorial" underline="hover">
+                            Follow our step-by-step tutorial
+                        </Link>
                     </Typography>
                 </Box>
                 <Grid container spacing={2}>

@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import { 
-  AppBar, 
-  Toolbar, 
-  Typography, 
-  Button, 
-  Box, 
-  Avatar, 
-  Chip, 
-  IconButton, 
-  Drawer, 
-  List, 
-  ListItem, 
-  ListItemIcon, 
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  Avatar,
+  Chip,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
   ListItemText,
   useMediaQuery,
   useTheme
@@ -24,6 +24,7 @@ import {
   BuildOutlined,
   MenuOutlined,
   CloseOutlined,
+  SchoolOutlined 
 } from '@mui/icons-material';
 
 const NavBar = () => {
@@ -51,15 +52,20 @@ const NavBar = () => {
       label: 'My Forms',
       path: '/myforms',
       icon: <FolderOutlined sx={{ fontSize: 18 }} />
+    },
+    {
+      label: 'Tutorial',
+      path: '/tutorial',
+      icon: <SchoolOutlined  sx={{ fontSize: 18 }} />
     }
   ];
 
   return (
     <>
-      <AppBar 
-        position="static" 
+      <AppBar
+        position="static"
         elevation={0}
-        sx={{ 
+        sx={{
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           backdropFilter: 'blur(10px)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
@@ -80,11 +86,11 @@ const NavBar = () => {
               <BuildOutlined sx={{ color: 'white', fontSize: { xs: 16, sm: 20 } }} />
             </Avatar>
             <Box>
-              <Typography 
-                variant="h6" 
+              <Typography
+                variant="h6"
                 component={Link}
                 to="/"
-                sx={{ 
+                sx={{
                   fontWeight: 700,
                   color: 'white',
                   textDecoration: 'none',
@@ -101,10 +107,10 @@ const NavBar = () => {
                 Form Builder
               </Typography>
               {!isMobile && (
-                <Typography 
-                  variant="caption" 
-                  sx={{ 
-                    ml:1,
+                <Typography
+                  variant="caption"
+                  sx={{
+                    ml: 1,
                     color: 'rgba(255, 255, 255, 0.7)',
                     fontSize: '0.7rem',
                     letterSpacing: 1,
@@ -122,7 +128,7 @@ const NavBar = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
-                
+
                 return (
                   <Button
                     key={item.path}
@@ -140,12 +146,12 @@ const NavBar = () => {
                       transition: 'all 0.3s ease',
                       position: 'relative',
                       color: isActive ? 'white' : 'rgba(255, 255, 255, 0.9)',
-                      background: isActive 
-                        ? 'rgba(255, 255, 255, 0.2)' 
+                      background: isActive
+                        ? 'rgba(255, 255, 255, 0.2)'
                         : 'transparent',
                       backdropFilter: isActive ? 'blur(10px)' : 'none',
-                      border: isActive 
-                        ? '1px solid rgba(255, 255, 255, 0.3)' 
+                      border: isActive
+                        ? '1px solid rgba(255, 255, 255, 0.3)'
                         : '1px solid transparent',
                       '&:hover': {
                         background: 'rgba(255, 255, 255, 0.15)',
@@ -227,20 +233,20 @@ const NavBar = () => {
           <Typography variant="h6" fontWeight={600}>
             Menu
           </Typography>
-          <IconButton 
+          <IconButton
             onClick={handleDrawerToggle}
             sx={{ color: 'white' }}
           >
             <CloseOutlined />
           </IconButton>
         </Box>
-        
+
         <List sx={{ px: 2 }}>
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
-            
+
             return (
-              <ListItem 
+              <ListItem
                 key={item.path}
                 component={Link}
                 to={item.path}
@@ -259,7 +265,7 @@ const NavBar = () => {
                 <ListItemIcon sx={{ color: 'white', minWidth: 40 }}>
                   {item.icon}
                 </ListItemIcon>
-                <ListItemText 
+                <ListItemText
                   primary={item.label}
                   primaryTypographyProps={{
                     fontWeight: isActive ? 700 : 500,
