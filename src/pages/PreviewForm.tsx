@@ -112,30 +112,37 @@ const PreviewForm = () => {
         return '';
     };
 
-    function computeDerivedValue(formula: string, values: Record<string, any>, formFields: any[]) {
-        let expr = formula;
+function computeDerivedValue(formula: string, values: Record<string, any>, formFields: any[]) {
+    console.log('Original formula:', formula);
+    let expr = formula;
 
-        formFields.forEach((field) => {
-            const alias = field.alias || field.id;
-            let value = values[field.id];
+    formFields.forEach((field) => {
+        const alias = field.alias || field.id;
+        let value = values[field.id];
 
-            // If value is empty or null, default to 0 for math
-            if (value === '' || value === undefined || value === null) {
-                value = 0;
-            }
-
-            // Replace alias in the formula with the safe value
-            expr = expr.replace(new RegExp(alias, 'g'), value);
-        });
-
-        try {
-            // eslint-disable-next-line no-eval
-            return eval(expr);
-        } catch (err) {
-            console.error('Eval error:', err);
-            return '';
+        if (value === '' || value === undefined || value === null) {
+            value = 0;
         }
+         if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+            value = `"${value}"`;  // Add quotes here
+        }
+        console.log(`Replacing alias "${alias}" with value:`, value);
+        expr = expr.replace(new RegExp(alias, 'g'), value);
+    });
+
+    console.log('Final expression to eval:', expr);
+
+    try {
+        // eslint-disable-next-line no-eval
+        const result = eval(expr);
+        console.log('Eval result:', result);
+        return result;
+    } catch (err) {
+        console.error('Eval error:', err);
+        return '';
     }
+}
+
 
     // Handle input change
     const handleChange = (field: FormField, value: any) => {
