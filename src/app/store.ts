@@ -1,0 +1,12 @@
+import { configureStore } from '@reduxjs/toolkit';
+import formBuilderReducer from '../features/formBuilder/formBuilderSlice';
+
+export const store = configureStore({
+  reducer: {
+    formBuilder: formBuilderReducer,
+  },
+});
+
+// Infer RootState and AppDispatch types
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
