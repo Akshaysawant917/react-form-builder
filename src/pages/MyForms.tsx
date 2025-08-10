@@ -151,10 +151,9 @@ const MyForms = () => {
         </Typography>
       </Box>
 
-      <Grid container spacing={1}>
+      <Grid container spacing={3}>
         {savedForms.map((form) => (
-          <Grid key={form.id} size={{ xs: 12, sm: 6, md: 5 }}>
-
+          <Grid key={form.id} size={{ xs: 12, sm: 12, md: 4, lg: 3 }}>
             <Card
               elevation={2}
               sx={{
@@ -256,18 +255,15 @@ const MyForms = () => {
               </CardContent>
             </Card>
           </Grid>
-
         ))}
-      </Grid>
 
-      {/* Add New Form Card */}
-      <Grid container spacing={3} sx={{ mt: 2 }}>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-
+        {/* Add New Form Card */}
+        <Grid size={{ xs: 12, sm: 12, md: 4, lg: 3 }}>
           <Card
             elevation={1}
             sx={{
-              height: 280,
+              height: '100%',
+              minHeight: 280,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -308,7 +304,6 @@ const MyForms = () => {
               </Typography>
             </Box>
           </Card>
-
         </Grid>
       </Grid>
     </Container>

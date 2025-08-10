@@ -1,6 +1,4 @@
-// src/pages/Home.tsx
-import React from 'react';
-import { Box, Typography, Button, Container, Card, Grid, Avatar, useTheme } from '@mui/material';
+import { Box, Typography, Button, Container, Card, Grid, Avatar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import {
   CreateOutlined,

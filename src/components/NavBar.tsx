@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   AppBar, 
   Toolbar, 
@@ -60,7 +60,6 @@ const NavBar = () => {
         position="static" 
         elevation={0}
         sx={{ 
-          mb: 4,
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           backdropFilter: 'blur(10px)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
@@ -105,6 +104,7 @@ const NavBar = () => {
                 <Typography 
                   variant="caption" 
                   sx={{ 
+                    ml:1,
                     color: 'rgba(255, 255, 255, 0.7)',
                     fontSize: '0.7rem',
                     letterSpacing: 1,

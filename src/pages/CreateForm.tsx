@@ -23,7 +23,6 @@ import {
     Switch,
     FormControlLabel,
     IconButton,
-    List,
     ListItem,
     ListItemText,
     ListItemSecondaryAction,
@@ -194,9 +193,9 @@ const CreateForm = () => {
             defaultValue,
             derived: isDerived
                 ? {
-                      parents: derivedParents,
-                      formula: formula.trim(),
-                  }
+                    parents: derivedParents,
+                    formula: formula.trim(),
+                }
                 : undefined,
             validation: (type === 'text' || type === 'textarea') ? validationObj : undefined,
         };
@@ -256,18 +255,18 @@ const CreateForm = () => {
     };
 
     return (
-        <Box sx={{ 
-            minHeight: '100vh', 
+        <Box sx={{
+            minHeight: '100vh',
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            py: 6 
+            py: 6
         }}>
             <Container maxWidth="xl">
                 {/* Header Section */}
                 <Box sx={{ textAlign: 'center', mb: 6 }}>
-                    <Typography 
-                        variant="h3" 
-                        component="h1" 
-                        sx={{ 
+                    <Typography
+                        variant="h3"
+                        component="h1"
+                        sx={{
                             fontWeight: 800,
                             color: 'white',
                             mb: 2,
@@ -276,9 +275,9 @@ const CreateForm = () => {
                     >
                         Form Builder Studio
                     </Typography>
-                    <Typography 
-                        variant="h6" 
-                        sx={{ 
+                    <Typography
+                        variant="h6"
+                        sx={{
                             color: 'rgba(255,255,255,0.9)',
                             maxWidth: 600,
                             mx: 'auto'
@@ -287,26 +286,26 @@ const CreateForm = () => {
                         Create dynamic forms with validation rules, derived fields, and custom configurations
                     </Typography>
                 </Box>
-                  <Grid container spacing={2}>
-                   <Grid size={{ xs: 12, lg: 5 }}>
+                <Grid container spacing={2}>
+                    <Grid size={{ xs: 12, lg: 7 }}>
 
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3,mb:2 }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, mb: 2 }}>
                             {/* Form Configuration Card */}
-                            <Card 
-                                elevation={8} 
-                                sx={{ 
+                            <Card
+                                elevation={8}
+                                sx={{
                                     borderRadius: 3,
                                     overflow: 'hidden',
                                     background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
                                     border: '1px solid rgba(255,255,255,0.2)'
                                 }}
                             >
-                                <CardHeader 
+                                <CardHeader
                                     title={
                                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                                            <Box sx={{ 
-                                                p: 1, 
-                                                borderRadius: 2, 
+                                            <Box sx={{
+                                                p: 1,
+                                                borderRadius: 2,
                                                 background: 'linear-gradient(45deg, #667eea, #764ba2)',
                                                 display: 'flex',
                                                 alignItems: 'center',
@@ -319,7 +318,7 @@ const CreateForm = () => {
                                             </Typography>
                                         </Box>
                                     }
-                                    sx={{ 
+                                    sx={{
                                         pb: 2,
                                         background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
                                         borderBottom: '1px solid #e2e8f0'
@@ -349,29 +348,29 @@ const CreateForm = () => {
                             </Card>
 
                             {/* Field Builder Card */}
-                            <Card 
+                            <Card
                                 elevation={8}
-                                sx={{ 
+                                sx={{
                                     borderRadius: 3,
                                     overflow: 'hidden',
                                     background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
                                     border: '1px solid rgba(255,255,255,0.2)'
                                 }}
                             >
-                                <CardHeader 
+                                <CardHeader
                                     title={
                                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                                            <Box sx={{ 
-                                                p: 1, 
-                                                borderRadius: 2, 
-                                                background: editingId 
-                                                    ? 'linear-gradient(45deg, #f59e0b, #d97706)' 
+                                            <Box sx={{
+                                                p: 1,
+                                                borderRadius: 2,
+                                                background: editingId
+                                                    ? 'linear-gradient(45deg, #f59e0b, #d97706)'
                                                     : 'linear-gradient(45deg, #10b981, #059669)',
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 justifyContent: 'center'
                                             }}>
-                                                {editingId ? 
+                                                {editingId ?
                                                     <EditIcon sx={{ color: 'white', fontSize: 20 }} /> :
                                                     <AddIcon sx={{ color: 'white', fontSize: 20 }} />
                                                 }
@@ -381,13 +380,13 @@ const CreateForm = () => {
                                             </Typography>
                                         </Box>
                                     }
-                                    sx={{ 
+                                    sx={{
                                         pb: 2,
                                         background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
                                         borderBottom: '1px solid #e2e8f0'
                                     }}
                                 />
-                                
+
                                 <CardContent sx={{ pt: 3 }}>
                                     {/* Basic Field Configuration */}
                                     <Box sx={{ mb: 4 }}>
@@ -395,7 +394,7 @@ const CreateForm = () => {
                                             Basic Information
                                         </Typography>
                                         <Grid container spacing={3}>
-                                           <Grid size={{ xs: 12, sm: 6 }}>
+                                            <Grid size={{ xs: 12, sm: 6 }}>
 
                                                 <FormControl fullWidth>
                                                     <InputLabel>Field Type</InputLabel>
@@ -428,7 +427,7 @@ const CreateForm = () => {
                                                 />
                                             </Grid>
 
-                                           <Grid size={{ xs: 12, sm: 6 }}>
+                                            <Grid size={{ xs: 12, sm: 6 }}>
 
                                                 <TextField
                                                     label="Alias"
@@ -442,7 +441,7 @@ const CreateForm = () => {
                                                 />
                                             </Grid>
 
-                                          <Grid size={{ xs: 12, sm: 6 }}>
+                                            <Grid size={{ xs: 12, sm: 6 }}>
 
                                                 <TextField
                                                     label="Default Value"
@@ -458,10 +457,10 @@ const CreateForm = () => {
                                     </Box>
 
                                     {/* Field Options */}
-                                    <Box sx={{ 
-                                        mb: 4, 
-                                        p: 3, 
-                                        borderRadius: 3, 
+                                    <Box sx={{
+                                        mb: 4,
+                                        p: 3,
+                                        borderRadius: 3,
                                         background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
                                         border: '1px solid #cbd5e1'
                                     }}>
@@ -479,7 +478,7 @@ const CreateForm = () => {
                                                 }
                                                 label="Derived Field"
                                             />
-                                            
+
                                             <FormControlLabel
                                                 control={
                                                     <Switch
@@ -496,19 +495,19 @@ const CreateForm = () => {
 
                                     {/* Derived Field Configuration */}
                                     {isDerived && (
-                                        <Accordion 
+                                        <Accordion
                                             elevation={2}
-                                            sx={{ 
-                                                mb: 3, 
+                                            sx={{
+                                                mb: 3,
                                                 borderRadius: 2,
                                                 '&:before': { display: 'none' },
                                                 border: '2px solid #3b82f6',
                                                 background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)'
                                             }}
                                         >
-                                            <AccordionSummary 
+                                            <AccordionSummary
                                                 expandIcon={<ExpandMoreIcon />}
-                                                sx={{ 
+                                                sx={{
                                                     backgroundColor: 'rgba(59, 130, 246, 0.1)',
                                                     borderRadius: '8px 8px 0 0'
                                                 }}
@@ -523,8 +522,8 @@ const CreateForm = () => {
                                                         Select Parent Field(s):
                                                     </Typography>
                                                     {fields.length === 0 ? (
-                                                        <Typography color="text.secondary" sx={{ 
-                                                            p: 2, 
+                                                        <Typography color="text.secondary" sx={{
+                                                            p: 2,
                                                             textAlign: 'center',
                                                             borderRadius: 2,
                                                             backgroundColor: 'rgba(0,0,0,0.05)'
@@ -532,8 +531,8 @@ const CreateForm = () => {
                                                             No fields available to select as parents
                                                         </Typography>
                                                     ) : (
-                                                        <Box sx={{ 
-                                                            maxHeight: 200, 
+                                                        <Box sx={{
+                                                            maxHeight: 200,
                                                             overflowY: 'auto',
                                                             border: '1px solid #cbd5e1',
                                                             borderRadius: 2,
@@ -552,8 +551,8 @@ const CreateForm = () => {
                                                                             />
                                                                         }
                                                                         label={`${f.label} (${f.type})`}
-                                                                        sx={{ 
-                                                                            display: 'block', 
+                                                                        sx={{
+                                                                            display: 'block',
                                                                             mb: 1,
                                                                             p: 1,
                                                                             borderRadius: 1,
@@ -584,19 +583,19 @@ const CreateForm = () => {
 
                                     {/* Validation Rules */}
                                     {(type === 'text' || type === 'textarea') && !isDerived && (
-                                        <Accordion 
+                                        <Accordion
                                             elevation={2}
-                                            sx={{ 
-                                                mb: 3, 
+                                            sx={{
+                                                mb: 3,
                                                 borderRadius: 2,
                                                 '&:before': { display: 'none' },
                                                 border: '2px solid #f59e0b',
                                                 background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)'
                                             }}
                                         >
-                                            <AccordionSummary 
+                                            <AccordionSummary
                                                 expandIcon={<ExpandMoreIcon />}
-                                                sx={{ 
+                                                sx={{
                                                     backgroundColor: 'rgba(245, 158, 11, 0.1)',
                                                     borderRadius: '8px 8px 0 0'
                                                 }}
@@ -622,7 +621,7 @@ const CreateForm = () => {
                                                             sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2 } }}
                                                         />
                                                     </Grid>
-                                                 <Grid size={{ xs: 12, sm: 6 }}>
+                                                    <Grid size={{ xs: 12, sm: 6 }}>
 
                                                         <TextField
                                                             label="Max Length"
@@ -638,7 +637,7 @@ const CreateForm = () => {
                                                         />
                                                     </Grid>
                                                 </Grid>
-                                                
+
                                                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                                                     <FormControlLabel
                                                         control={
@@ -666,22 +665,22 @@ const CreateForm = () => {
                                     )}
 
                                     {/* Action Button */}
-                                    <Button 
-                                        variant="contained" 
-                                        fullWidth 
+                                    <Button
+                                        variant="contained"
+                                        fullWidth
                                         onClick={handleAddOrUpdateField}
                                         size="large"
                                         startIcon={editingId ? <EditIcon /> : <AddIcon />}
-                                        sx={{ 
+                                        sx={{
                                             mt: 2,
                                             py: 1.5,
                                             borderRadius: 3,
-                                            background: editingId 
-                                                ? 'linear-gradient(45deg, #f59e0b, #d97706)' 
+                                            background: editingId
+                                                ? 'linear-gradient(45deg, #f59e0b, #d97706)'
                                                 : 'linear-gradient(45deg, #10b981, #059669)',
                                             '&:hover': {
-                                                background: editingId 
-                                                    ? 'linear-gradient(45deg, #d97706, #b45309)' 
+                                                background: editingId
+                                                    ? 'linear-gradient(45deg, #d97706, #b45309)'
                                                     : 'linear-gradient(45deg, #059669, #047857)',
                                                 transform: 'translateY(-2px)',
                                                 boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
@@ -696,25 +695,25 @@ const CreateForm = () => {
                         </Box>
                     </Grid>
 
-                  <Grid size={{ xs: 12, lg: 5 }}>
+                    <Grid size={{ xs: 12, lg: 5 }}>
 
-                        <Card 
+                        <Card
                             elevation={8}
-                            sx={{ 
+                            sx={{
                                 borderRadius: 3,
-                          
+
                                 background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
                                 border: '1px solid rgba(255,255,255,0.2)',
-                                
-                        
+
+
                             }}
                         >
-                            <CardHeader 
+                            <CardHeader
                                 title={
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                                        <Box sx={{ 
-                                            p: 1, 
-                                            borderRadius: 2, 
+                                        <Box sx={{
+                                            p: 1,
+                                            borderRadius: 2,
                                             background: 'linear-gradient(45deg, #8b5cf6, #7c3aed)',
                                             display: 'flex',
                                             alignItems: 'center',
@@ -727,26 +726,26 @@ const CreateForm = () => {
                                         </Typography>
                                     </Box>
                                 }
-                                sx={{ 
+                                sx={{
                                     pb: 2,
                                     background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
                                     borderBottom: '1px solid #e2e8f0'
                                 }}
                             />
-                            
+
                             <CardContent >
                                 {fields.length === 0 ? (
-                                    <Box sx={{ 
-                                        textAlign: 'center', 
+                                    <Box sx={{
+                                        textAlign: 'center',
                                         py: 8,
                                         background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
                                         borderRadius: 3,
                                         border: '2px dashed #cbd5e1'
                                     }}>
-                                        <Box sx={{ 
-                                            width: 80, 
-                                            height: 80, 
-                                            mx: 'auto', 
+                                        <Box sx={{
+                                            width: 80,
+                                            height: 80,
+                                            mx: 'auto',
                                             mb: 3,
                                             borderRadius: '50%',
                                             background: 'linear-gradient(45deg, #e2e8f0, #cbd5e1)',
@@ -766,15 +765,15 @@ const CreateForm = () => {
                                 ) : (
                                     <Box sx={{ mt: 2 }}>
                                         {fields.map((field, index) => (
-                                            <Paper 
-                                                key={field.id} 
+                                            <Paper
+                                                key={field.id}
                                                 elevation={2}
-                                                sx={{ 
-                                                    mb: 2, 
+                                                sx={{
+                                                    mb: 2,
                                                     borderRadius: 3,
                                                     overflow: 'hidden',
                                                     border: editingId === field.id ? '2px solid #3b82f6' : '1px solid #e2e8f0',
-                                                    background: editingId === field.id 
+                                                    background: editingId === field.id
                                                         ? 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)'
                                                         : 'white',
                                                     transition: 'all 0.3s ease',
@@ -791,9 +790,9 @@ const CreateForm = () => {
                                                                 <Typography variant="subtitle1" fontWeight={700} color="#1f2937">
                                                                     {field.label}
                                                                 </Typography>
-                                                                <Chip 
-                                                                    label={field.type} 
-                                                                    size="small" 
+                                                                <Chip
+                                                                    label={field.type}
+                                                                    size="small"
                                                                     sx={{
                                                                         background: 'linear-gradient(45deg, #3b82f6, #1d4ed8)',
                                                                         color: 'white',
@@ -802,9 +801,9 @@ const CreateForm = () => {
                                                                     }}
                                                                 />
                                                                 {field.required && (
-                                                                    <Chip 
-                                                                        label="Required" 
-                                                                        size="small" 
+                                                                    <Chip
+                                                                        label="Required"
+                                                                        size="small"
                                                                         sx={{
                                                                             background: 'linear-gradient(45deg, #ef4444, #dc2626)',
                                                                             color: 'white',
@@ -814,9 +813,9 @@ const CreateForm = () => {
                                                                     />
                                                                 )}
                                                                 {field.derived && (
-                                                                    <Chip 
-                                                                        label="Derived" 
-                                                                        size="small" 
+                                                                    <Chip
+                                                                        label="Derived"
+                                                                        size="small"
                                                                         sx={{
                                                                             background: 'linear-gradient(45deg, #8b5cf6, #7c3aed)',
                                                                             color: 'white',
@@ -859,7 +858,7 @@ const CreateForm = () => {
                                                                 onClick={() => handleMoveUp(index)}
                                                                 disabled={index === 0}
                                                                 size="small"
-                                                                sx={{ 
+                                                                sx={{
                                                                     backgroundColor: index === 0 ? 'transparent' : 'rgba(99, 102, 241, 0.1)',
                                                                     '&:hover': { backgroundColor: 'rgba(99, 102, 241, 0.2)' },
                                                                     color: index === 0 ? '#9ca3af' : '#6366f1'
@@ -871,7 +870,7 @@ const CreateForm = () => {
                                                                 onClick={() => handleMoveDown(index)}
                                                                 disabled={index === fields.length - 1}
                                                                 size="small"
-                                                                sx={{ 
+                                                                sx={{
                                                                     backgroundColor: index === fields.length - 1 ? 'transparent' : 'rgba(99, 102, 241, 0.1)',
                                                                     '&:hover': { backgroundColor: 'rgba(99, 102, 241, 0.2)' },
                                                                     color: index === fields.length - 1 ? '#9ca3af' : '#6366f1'
@@ -879,10 +878,10 @@ const CreateForm = () => {
                                                             >
                                                                 <ArrowDownwardIcon fontSize="small" />
                                                             </IconButton>
-                                                            <IconButton 
-                                                                onClick={() => handleEdit(field)} 
+                                                            <IconButton
+                                                                onClick={() => handleEdit(field)}
                                                                 size="small"
-                                                                sx={{ 
+                                                                sx={{
                                                                     backgroundColor: 'rgba(245, 158, 11, 0.1)',
                                                                     '&:hover': { backgroundColor: 'rgba(245, 158, 11, 0.2)' },
                                                                     color: '#f59e0b'
@@ -890,10 +889,10 @@ const CreateForm = () => {
                                                             >
                                                                 <EditIcon fontSize="small" />
                                                             </IconButton>
-                                                            <IconButton 
-                                                                onClick={() => handleDelete(field.id)} 
+                                                            <IconButton
+                                                                onClick={() => handleDelete(field.id)}
                                                                 size="small"
-                                                                sx={{ 
+                                                                sx={{
                                                                     backgroundColor: 'rgba(239, 68, 68, 0.1)',
                                                                     '&:hover': { backgroundColor: 'rgba(239, 68, 68, 0.2)' },
                                                                     color: '#ef4444'
@@ -918,7 +917,7 @@ const CreateForm = () => {
                                     size="large"
                                     startIcon={<SaveIcon />}
                                     disabled={!formName.trim() || fields.length === 0}
-                                    sx={{ 
+                                    sx={{
                                         py: 2,
                                         borderRadius: 3,
                                         background: 'linear-gradient(45deg, #059669, #047857)',
@@ -937,12 +936,12 @@ const CreateForm = () => {
                                         transition: 'all 0.3s ease'
                                     }}
                                 >
-                                     Save Form
+                                    Save Form
                                 </Button>
                             </CardContent>
                         </Card>
                     </Grid>
-                    </Grid>
+                </Grid>
             </Container>
         </Box>
     );
